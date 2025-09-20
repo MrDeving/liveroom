@@ -1,0 +1,326 @@
+  /* Add at the very top of style.css */
+  @font-face {
+    font-family: 'BitcountGridDouble';
+    src: url('BitcountGridDouble-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'LibreBaskervilleBold';
+    src: url('LibreBaskerville-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'NotoSansJP';
+    src: url('NotoSansJP-Black.ttf') format('truetype');
+  }
+
+
+  /* Reset defaults for all elements */
+  * {
+    margin: 0;        
+    padding: 0;       
+    box-sizing: border-box; 
+  }
+
+  /* Body background */
+  body {
+    background-color: #090a0c; /* Background behind everything */
+  }
+
+  /* Sidebar styling */
+  .sidebar {
+    position: fixed;       
+    top: 0;                
+    left: 0;               
+    width: 17%;            
+    height: 100%;          
+    background-color: #0d0f13; 
+    border-right: 1px solid #2a2c30; 
+    z-index: 10;           
+  }
+
+  /* Target the images themselves for additional styling if needed */
+  .page-image {
+    width: 100%;           /* Fill container width */
+    height: auto;          /* Maintain aspect ratio */
+  }
+
+  /* Logo styling */
+  .sos-logo {
+    position: absolute;    /* Allows precise positioning */
+    top: 5.2%;               /* Vertical position */
+    left: 2.8%;              /* Horizontal position */
+    width: 3.4%;           /* Logo width */
+    height: auto;          /* Maintain aspect ratio */
+    z-index: 20;           /* Ensure logo sits above sidebar */
+  }
+
+  .text-group {
+    position: absolute;          /* allows positioning on page */
+    top: 8.7%;                     /* vertical position for the group */
+    left: 11%;                  /* horizontal position for the group */
+    transform: translate(-50%, -50%); /* centers the group at top/left */
+    z-index: 20;                 /* ensures group is above sidebar */
+  }
+
+  /* SOS HGS inside the group */
+  .text-group .text-sos-hgs {
+    font-family: 'NotoSansJP'; /* custom font */
+    color: white;
+    font-size: 1.6vw;                     /* adjust this value to change size */
+    margin-left: 0;
+    margin-top: -2%;
+  }
+
+  /* Live Room inside the group */
+  .text-group .text-live-room {
+    font-family: 'NotoSansJP';   /* custom font */
+    color: white;
+    font-size: 1.5vw;                   /* adjust this value to change size */
+    margin-top: -5%;                      /* vertical spacing relative to SOS HGS */
+  }
+
+
+  .stream {
+    position: absolute;
+    top: 31%;
+    left: 5.5%;
+    font-family: 'NotoSansJP';
+    color: white;
+    font-size: 1.2vw;
+    z-index: 20;
+    opacity: 100%;
+  }
+
+  .stream .stream-logo {
+    position: absolute;
+    margin-top: -1%;
+    margin-left: -33%;
+    width: 25%;
+    height: auto;
+    z-index: 20;
+  }
+
+  .stream .private {
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 18%;
+    z-index: 20;
+  }
+
+  .stream .public {
+    position: absolute;
+    margin-top: 41%;
+    margin-left: 21.45%;
+    z-index: 20;
+  }
+  /* Rectangle background for Private and Public texts, same size */
+.stream .private::before,
+.stream .public::before {
+  content: "";                 /* Required for pseudo-element */
+  position: absolute;          /* Position relative to parent */
+  top: 50%;                    /* Center vertically relative to parent */
+  left: 50%;                   /* Center horizontally relative to parent */
+  transform: translate(-50%, -50%); /* Center rectangle perfectly */
+  width: 8vw;                  /* Fixed width for both rectangles, based on Private */
+  height: 1.8vw;                 /* Fixed height for both rectangles, based on Private */
+  background-color: #3f3f3f;  /* Rectangle color */
+  border-radius: 3px;          /* Rounded corners */
+  z-index: -1;                 /* Place rectangle behind text */
+}
+
+/* Admin section */
+.admin {
+  position: absolute;   /* so you can move it later */
+  z-index: 20;          /* keeps it above backgrounds */
+  color: white;         /* white text color */
+  font-family: 'NotoSansJP'; 
+  top: 24%; /* if admin logo is included then top 23% */
+  left: 1.1%; /* if the admin-logo is going to be at opacity 100% then make the value left on .admin 1.7% */
+  opacity: 70%;
+}
+
+.admin .admin-logo {
+  color: white;
+  width: 3.2%;            /* logo width */
+  height: auto;         /* keeps aspect ratio */
+  opacity: 0%;
+}
+
+.admin .admin-text {
+  margin-top: -3.2%;      /* small spacing below logo */
+  margin-left: 4%;
+  font-size: 1.2vw;     /* adjust text size here */
+}
+
+/* Live section */
+.live {
+  position: absolute;  /* you can move the whole section */
+  top: 6%;            /* adjust vertical placement */
+  left: 75%;           /* adjust horizontal placement */ 
+  z-index: 20;
+}
+
+.live .live-box {
+  width: 320px;        /* box width */
+  height: 600px;       /* box height */
+  background-color: #111922;
+  border-radius: 5px;  /* optional: rounded corners */
+  position: relative;  /* so child elements (title) can be positioned inside */
+}
+
+.live .live-title {
+  position: absolute;
+  top: 2%;             /* distance from top of box */
+  left: 5%;            /* distance from left of box */
+  font-family: 'NotoSansJP';
+  color: white;
+  font-size: 1vw;      /* adjust font size */
+}
+
+/* Small boxes inside Live */
+.live .live-small-box {
+  width: 80px;              /* box width (adjust later) */
+  height: 40px;             /* box height (adjust later) */
+  background-color: #242b33;
+  border-radius: 4px;       /* optional rounding */
+  position: absolute;       /* so you can move them individually */
+}
+
+/* First small box */
+.live .box1 {
+  top: %;   /* adjust position */
+  left: %;
+  width: 320px;
+  height: 45px;
+}
+
+/* Second small box */
+.live .box2 {
+  top: 87%;   /* adjust position */
+  left: 7%;
+  width: 280px;
+  height: 60px;
+}
+/* Video section container */
+.vid {
+  position: absolute; /* lets you move the whole section */
+  top: 6%;           /* adjust vertical placement */
+  left: 17.7%;          /* adjust horizontal placement */
+  z-index: 20;        /* keeps it above backgrounds */
+}
+
+/* The rectangle inside */
+.vid .vid-box {
+  width: 765px;               /* adjust width */
+  height: 420px;              /* adjust height */
+  background-color: #0d0f13;  /* fill color */
+  border: 2px solid #242b33;  /* stroke */
+  border-radius: 6px;         /* optional: round corners */
+}
+/* About Video section */
+.abt-vid {
+  position: absolute; 
+  top: 74%;          /* adjust placement */
+  left: 17.7%; 
+  z-index: 20;
+  font-family: 'NotoSansJP';
+  color: white;
+}
+
+/* Title text */
+.abt-vid .abt-title {
+  font-size: 1.2vw;  /* adjust size */
+  margin-bottom: 3%;
+  margin-left: 2%;
+}
+
+/* The box */
+.abt-vid .abt-box {
+  width: 765px;          /* adjust size */
+  height: 300px; 
+  background-color: #272727;
+  border-radius: 4px;
+  display: flex;         /* to center text */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text inside box */
+.abt-vid .abt-box-text {
+  font-size: 1vw;        /* adjust font size */
+  color: white;
+}
+
+.mic {
+  position: absolute;   /* move the whole mic section */
+  top: 50%;             /* adjust vertical placement */
+  left: 5%;            /* adjust horizontal placement */
+  z-index: 20;          /* keep above everything */
+}
+
+.mic-muted-img {
+  width: 3%;          /* adjust icon size */
+  height: auto;
+  display: block;
+}
+.mic-muted-text {
+  font-family: 'NotoSansJP';
+  color: white;
+  font-size: 0.9vw;     /* adjust text size */
+  margin-top: 0%;      /* space between icon & text */
+  margin-left: -0.9%;     /* shift text left relative to icon */
+  display: block;
+}
+
+/* Unmuted icon & text */
+.mic-unmuted-img {
+  width: 3%;          /* adjust icon size */
+  height: auto;
+  margin-top: -7.67%;
+}
+.mic-unmuted-text {
+  font-family: 'NotoSansJP';
+  color: white;
+  font-size: 0.9vw;     /* adjust text size */
+  margin-top: 0%;      /* space between icon & text */
+  margin-left: -2.1%;     /* shift text left relative to icon */
+  display: block;
+}
+
+.camera {
+  position: absolute;
+  top: 49.8%;
+  left: 10%;
+  z-index: 20;
+}
+
+.camera-on-img {
+  width: 12.5%;
+  height: auto;
+  margin-top: -2%;
+  display: block;
+}
+
+.camera-on-txt {
+  font-family: 'NotoSansJP';
+  color: white;
+  font-size: 0.9vw;
+  margin-top: -2.5%;
+  margin-left: -1.4%;
+  display: block;
+}
+
+.camera-off-img {
+  width: 12.5%;
+  height: auto;
+  margin-top: -14.27%;
+  display: block;
+}
+
+.camera-off-txt {
+  font-family: 'NotoSansJP';
+  color: white;
+  font-size: 0.9vw;
+  margin-top: -2.7%;
+  margin-left: -1.4%;
+  display: block;
+}
