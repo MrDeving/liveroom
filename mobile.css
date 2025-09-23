@@ -1,0 +1,227 @@
+  @font-face {
+    font-family: 'NotoSansJP';
+    src: url('NotoSansJP-Black.ttf') format('truetype');
+  }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #090a0c;
+  font-family: 'NotoSansJP';
+  color: white;
+}
+
+.sos-logo {
+  position: absolute;
+  top: 15px;
+  left: 4%;
+}
+
+.sos-logo img {
+  width: 20%;   /* set fixed width */
+  height: auto;
+}
+
+.text-group {
+  position: absolute;
+  font-family: 'NotoSansJP';
+  top: 12px;
+  left: 18.2%;
+}
+
+.text-live-room {
+  margin-top: -5%
+}
+
+.stream {
+  position: absolute;
+  top: 330px;
+  left: 13%;
+  z-index: 20;
+}
+
+.stream-logo {
+  position: absolute;
+  margin-left: -32%;
+  margin-top: -1%;
+}
+
+.stream-logo img {
+  width: 20%;
+  height: auto;
+}
+
+.private {
+  position: absolute;
+  opacity: 0%;
+}
+
+.public {
+  position: absolute;
+  left: 19%;
+  top: 118%;
+  z-index: 20
+}
+
+.public-box {
+  position: absolute;
+  width: 75px;
+  height: 30px;
+  top: 110%;
+  left: 7%;
+  background-color: #2e2e2e
+}
+
+.admin {
+  position: absolute;
+  opacity: 0%;
+}
+
+.vid {
+  position: absolute;
+  opacity: 100%;
+  left: 3%;
+  top: 70px;
+}
+
+.vid .vid-box {
+  width: 340px;               /* adjust width */
+  height: 250px;              /* adjust height */
+  background-color: #0d0f13;  /* fill color */
+  border: 2px solid #1a1a1d;  /* stroke */
+  border-radius: 6px;         /* optional: round corners */
+}
+
+.abt-vid  {
+  position: absolute;
+  opacity: 0%;
+}
+
+.mic {
+  position: absolute;
+  top: 333px;
+  left: 183px;
+  width: 40%;
+  z-index: 20;
+}
+
+.mic-muted-img {
+  top: -13%;
+  left: 100%;
+  opacity: 0%;
+}
+
+.mic-muted-img img {
+  width: 15%;
+  height:auto;
+}
+
+.mic-muted-text {
+  position: absolute;
+  left: -13px;
+  opacity: 0%;
+}
+
+.mic-unmuted-img {
+  position:absolute;
+  top: -0.3px;
+  left: 0px;
+}
+
+.mic-unmuted-text {
+  position:absolute;
+  left: -24px;
+  opacity: 100%;
+}
+
+.mic-unmuted-img img {
+  width: 15%;
+  height:auto;
+}
+
+.camera {
+  position: absolute;
+  top: 322px;
+  left: 270px;
+  width: 90%;
+  opacity: 100%;
+}
+
+.camera-on-img {
+  top: 10px;
+  left: 30px;
+}
+
+.camera-on-img img {
+  width: 18%;
+}
+
+.camera-off-img {
+  top: 30px;
+  left: 30px;
+  opacity: 0%;
+}
+
+.camera-off-img img {
+  width: 18%;
+}
+
+.camera-on-txt {
+  position: absolute;
+  left: -20px;
+  top: 50.5px;
+}
+
+.camera-off-txt {
+  position: absolute;
+  opacity: 0%;
+  left: -30px;
+}
+
+.live {
+  position: absolute;  /* you can move the whole section */
+  top: 410px;            /* adjust vertical placement */
+  left: 15px;           /* adjust horizontal placement */ 
+  z-index: 20;
+  opacity: 100%;
+}
+
+.live .live-box {
+  width: 330px;        /* box width */
+  height: 322px;       /* box height */
+  background-color: #111922;
+  border-radius: 5px;  /* optional: rounded corners */
+  position: relative;  /* so child elements (title) can be positioned inside */
+}
+
+.live .live-title {
+  position: absolute;
+  top: 3.8%;             /* distance from top of box */
+  left: 3%;            /* distance from left of box */
+  font-family: 'NotoSansJP';
+  color: white;
+  font-size: 5vw;      /* adjust font size */
+}
+
+.live .live-small-box {
+  width: 330px;              /* box width (adjust later) */
+  height: 50px;             /* box height (adjust later) */
+  background-color: #242b33;
+  border-radius: 4px;       /* optional rounding */
+  position: absolute;       /* so you can move them individually */
+}
+
+.arrow {
+  position:absolute;
+  top: 420px;
+  left: 300px;
+  z-index: 21;
+}
+
+.arrow img {
+  width: 50%;
+}
