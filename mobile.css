@@ -17,8 +17,8 @@ body {
 }
 
 .container {
-  width: 320px;     /* or 200px */
-  height: 591px;
+  width: 100vw;     /* or 200px */
+  height: 100vh;
   background: #222;
   position: relative;
   overflow: hidden; /* anything bigger is cut off */
@@ -235,3 +235,4 @@ body {
 .arrow img {
   width: 50%;
 }
+
