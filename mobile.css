@@ -32,7 +32,7 @@ body {
 }
 
 .sos-logo img {
-  width: 20%;   /* set fixed width */
+  width: 12vw;   /* set fixed width */
   height: auto;
 }
 
@@ -44,24 +44,24 @@ body {
 }
 
 .text-live-room {
-  margin-top: -0.5vh
+  margin-top: -0.8vh
 }
 
 .stream {
   position: absolute;
-  top: 55vh;
-  left: 7.5vh;
+  top: 56.2vh;
+  left: 6.2vh;
   z-index: 20;
 }
 
 .stream-logo {
   position: absolute;
-  margin-left: -32%;
-  margin-top: -1%;
+  margin-left: -10vw;  /* -32% of 320px → -32vw */
+  margin-top: ;    /* -1% of 575px → -1vh */
 }
 
 .stream-logo img {
-  width: 20%;
+  width: 20%;          /* 20% of 320px */
   height: auto;
 }
 
@@ -72,18 +72,18 @@ body {
 
 .public {
   position: absolute;
-  left: 19%;
-  top: 118%;
-  z-index: 20
+  left: 6vw;           /* 19% of 320px → 19vw */
+  top: 4.7vh;           /* 118% of 575px → 118vh */
+  z-index: 20;
 }
 
 .public-box {
   position: absolute;
-  width: 75px;
-  height: 30px;
-  top: 110%;
-  left: 7%;
-  background-color: #2e2e2e
+  width: 70px;        /* 75px of 320px → 75/320*100 ≈ 23.4vw */
+  height: 25px;        /* 30px of 575px → 30/575*100 ≈ 5.2vh */
+  top: 4.9vh;            /* 110% of 575px → 110vh */
+  left: 2.7vw;             /* 7% of 320px → 7vw */
+  background-color: #2e2e2e;
 }
 
 .admin {
@@ -94,144 +94,144 @@ body {
 .vid {
   position: absolute;
   opacity: 100%;
-  left: 3%;
-  top: 70px;
+  left: 2.5vw;           /* 3% of 320px → 3vw */
+  top: 10.17vh;         /* 70px of 575px → 70/575*100 ≈ 12.17vh */
 }
 
 .vid .vid-box {
-  width: 340px;               /* adjust width */
-  height: 250px;              /* adjust height */
-  background-color: #0d0f13;  /* fill color */
-  border: 2px solid #1a1a1d;  /* stroke */
-  border-radius: 6px;         /* optional: round corners */
+  width: 95vw;      /* 340px of 320px → 340/320*100 ≈ 106.25vw */
+  height: 43.48vh;      /* 250px of 575px → 250/575*100 ≈ 43.48vh */
+  background-color: #0d0f13;
+  border: 0.35vh solid #1a1a1d;  /* 2px → 2/575*100 ≈ 0.35vh */
+  border-radius: 1.04vh;         /* 6px → 6/575*100 ≈ 1.04vh */
 }
 
-.abt-vid  {
+.abt-vid {
   position: absolute;
   opacity: 0%;
 }
 
 .mic {
   position: absolute;
-  top: 333px;
-  left: 183px;
-  width: 40%;
+  top: 56.6vh;        /* 333px / 575*100 ≈ 57.91vh */
+  left: 52.19vw;       /* 183px / 320*100 ≈ 57.19vw */
+  width: 40%;         /* keep relative to container width */
   z-index: 20;
 }
 
 .mic-muted-img {
-  top: -13%;
-  left: 100%;
+  top: -10vh;           /* from % to vh */
+  left: 100vw;
   opacity: 0%;
 }
 
 .mic-muted-img img {
   width: 15%;
-  height:auto;
+  height: auto;
 }
 
 .mic-muted-text {
   position: absolute;
-  left: -13px;
+  left: -4.06vw;        /* -13px / 320*100 ≈ -4.06vw */
   opacity: 0%;
 }
 
 .mic-unmuted-img {
-  position:absolute;
-  top: -0.3px;
-  left: 0px;
+  position: absolute;
+  top: -0.003vh;        /* -0.3px / 575*100 ≈ -0.05vh */
+  left: 0vw;
 }
 
 .mic-unmuted-text {
-  position:absolute;
-  left: -24px;
+  position: absolute;
+  left: -8.6vw;        /* -24px / 320*100 ≈ -7.5vw */
   opacity: 100%;
 }
 
 .mic-unmuted-img img {
   width: 15%;
-  height:auto;
+  height: auto;
 }
 
 .camera {
   position: absolute;
-  top: 322px;
-  left: 270px;
-  width: 90%;
+  top: 54.2vh;        /* 322px / 575*100 ≈ 55.91vh */
+  left: 76.38vw;       /* 270px / 320*100 ≈ 84.38vw */
+  width: 90vw;
   opacity: 100%;
 }
 
 .camera-on-img {
-  top: 10px;
-  left: 30px;
+  top: 1.74vh;          /* 10px / 575*100 ≈ 1.74vh */
+  left: 9.38vw;         /* 30px / 320*100 ≈ 9.38vw */
 }
 
 .camera-on-img img {
-  width: 18%;
+  width: 18vw;
 }
 
 .camera-off-img {
-  top: 30px;
-  left: 30px;
+  top: 5.22vh;          /* 30px / 575*100 ≈ 5.22vh */
+  left: 9.38vw;
   opacity: 0%;
 }
 
 .camera-off-img img {
-  width: 18%;
+  width: 18vw;
 }
 
 .camera-on-txt {
   position: absolute;
-  left: -20px;
-  top: 50.5px;
+  left: -6.25vw;        /* -20px / 320*100 ≈ -6.25vw */
+  top: 8.78vh;          /* 50.5px / 575*100 ≈ 8.78vh */
 }
 
 .camera-off-txt {
   position: absolute;
   opacity: 0%;
-  left: -30px;
+  left: -9.38vw;        /* -30px / 320*100 ≈ -9.38vw */
 }
 
 .live {
-  position: absolute;  /* you can move the whole section */
-  top: 410px;            /* adjust vertical placement */
-  left: 15px;           /* adjust horizontal placement */ 
+  position: absolute;
+  top: 71.3vh;          /* 410px / 575*100 ≈ 71.3vh */
+  left: 4.69vw;         /* 15px / 320*100 ≈ 4.69vw */
   z-index: 20;
   opacity: 100%;
 }
 
 .live .live-box {
-  width: 330px;        /* box width */
-  height: 322px;       /* box height */
+  width: 103.13vw;      /* 330px / 320*100 ≈ 103.13vw */
+  height: 56vh;          /* 322px / 575*100 ≈ 56vh */
   background-color: #111922;
-  border-radius: 5px;  /* optional: rounded corners */
-  position: relative;  /* so child elements (title) can be positioned inside */
+  border-radius: 0.87vh; /* 5px / 575*100 ≈ 0.87vh */
+  position: relative;
 }
 
 .live .live-title {
   position: absolute;
-  top: 3.8%;             /* distance from top of box */
-  left: 3%;            /* distance from left of box */
+  top: 3.8%;
+  left: 3%;
   font-family: 'NotoSansJP';
   color: white;
-  font-size: 5vw;      /* adjust font size */
+  font-size: 5vw;
 }
 
 .live .live-small-box {
-  width: 330px;              /* box width (adjust later) */
-  height: 50px;             /* box height (adjust later) */
+  width: 103.13vw;       /* 330px / 320*100 ≈ 103.13vw */
+  height: 8.7vh;         /* 50px / 575*100 ≈ 8.7vh */
   background-color: #242b33;
-  border-radius: 4px;       /* optional rounding */
-  position: absolute;       /* so you can move them individually */
+  border-radius: 0.7vh;  /* 4px / 575*100 ≈ 0.7vh */
+  position: absolute;
 }
 
 .arrow {
-  position:absolute;
-  top: 420px;
-  left: 300px;
+  position: absolute;
+  top: 73.04vh;          /* 420px / 575*100 ≈ 73.04vh */
+  left: 93.75vw;         /* 300px / 320*100 ≈ 93.75vw */
   z-index: 21;
 }
 
 .arrow img {
-  width: 50%;
+  width: 50vw;            /* 50% of container width → scaled to viewport */
 }
