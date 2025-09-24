@@ -10,10 +10,20 @@
 }
 
 body {
-  background-color: #090a0c;
+  margin: 0;
+  padding: 0;
+  background: #090a0c;
   font-family: 'NotoSansJP';
-  color: white;
 }
+
+.container {
+  width: 320px;     /* or 200px */
+  height: 591px;
+  background: #222;
+  position: relative;
+  overflow: hidden; /* anything bigger is cut off */
+}
+
 
 .sos-logo {
   position: absolute;
