@@ -1,7 +1,8 @@
-  @font-face {
-    font-family: 'NotoSansJP';
-    src: url('NotoSansJP-Black.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'NotoSansJP';
+  src: url('NotoSansJP-Black.ttf') format('truetype');
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -10,228 +11,280 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background: #090a0c;
   font-family: 'NotoSansJP';
   color: white;
 }
 
+/* Main container */
 .container {
-  width: 100vw;     /* or 200px */
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   position: relative;
-  overflow: hidden; /* anything bigger is cut off */
+  overflow-x: hidden; /* cut off anything wider than screen */
 }
 
-
-.sos-logo {
-  position: absolute;
-  top: 2vh;
-  left: 2vh;
+/* === Header: Logo + Text Group === */
+.header {
+  display: flex;
+  align-items: flex-start;     /* aligns text a bit higher relative to logo */
+  gap: 0.5rem;                 /* space between logo and text */
+  padding: 1rem;               /* space from edges */
+  position: relative;          /* not absolute so video can follow naturally */
 }
 
+/* Logo */
 .sos-logo img {
-  width: 12vw;   /* set fixed width */
+  width: 48px;
   height: auto;
 }
 
+/* Text stacked vertically */
 .text-group {
-  position: absolute;
-  font-family: 'NotoSansJP';
-  top: 1.4vh;
-  left: 18.2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* push text a little up */
+  margin: 0;
+  line-height: 1.1;           /* tighten spacing between SOS HGS and Live Room */
 }
 
+/* Main title */
+.text-sos-hgs {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Subtitle */
 .text-live-room {
-  margin-top: -0.8vh
+  font-size: 1.25rem;
+  font-weight: bold;           /* you said you changed opacity to bold */
 }
 
-.stream {
-  position: absolute;
-  top: 56.2vh;
-  left: 6.2vh;
-  z-index: 20;
+.vid-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.2rem;
+  width: 100%;
+  padding: 0;      /* remove extra padding */
 }
 
-.stream-logo {
-  position: absolute;
-  margin-left: -10vw;  /* -32% of 320px → -32vw */
-  margin-top: ;    /* -1% of 575px → -1vh */
-}
-
-.stream-logo img {
-  width: 20%;          /* 20% of 320px */
-  height: auto;
-}
-
-.private {
-  position: absolute;
-  opacity: 0%;
-}
-
-.public {
-  position: absolute;
-  left: 6vw;           /* 19% of 320px → 19vw */
-  top: 4.7vh;           /* 118% of 575px → 118vh */
-  z-index: 20;
-}
-
-.public-box {
-  position: absolute;
-  width: 70px;        /* 75px of 320px → 75/320*100 ≈ 23.4vw */
-  height: 25px;        /* 30px of 575px → 30/575*100 ≈ 5.2vh */
-  top: 4.9vh;            /* 110% of 575px → 110vh */
-  left: 2.7vw;             /* 7% of 320px → 7vw */
-  background-color: #2e2e2e;
-}
-
-.admin {
-  position: absolute;
-  opacity: 0%;
-}
-
-.vid {
-  position: absolute;
-  opacity: 100%;
-  left: 2.5vw;           /* 3% of 320px → 3vw */
-  top: 10.17vh;         /* 70px of 575px → 70/575*100 ≈ 12.17vh */
-}
-
-.vid .vid-box {
-  width: 95vw;      /* 340px of 320px → 340/320*100 ≈ 106.25vw */
-  height: 43.48vh;      /* 250px of 575px → 250/575*100 ≈ 43.48vh */
+.vid-box {
+  width: 90%;
+  max-width: 765px;
+  margin: 0;       /* make sure centered properly */
+  aspect-ratio: 16/9;
   background-color: #0d0f13;
-  border: 0.35vh solid #1a1a1d;  /* 2px → 2/575*100 ≈ 0.35vh */
-  border-radius: 1.04vh;         /* 6px → 6/575*100 ≈ 1.04vh */
+  border: 2px solid #242b33;
+  border-radius: 6px;
 }
 
-.abt-vid {
-  position: absolute;
-  opacity: 0%;
+/* Hide all children of bottom-row except Stream and Mic */
+.bottom-row > * {
+  display: none;
 }
 
+.bottom-row {
+  display: flex;             /* horizontal row */
+  justify-content: center;   /* center row */
+  align-items: flex-start;   /* top-align all stacks */
+  gap: 0.8rem;                 /* space between Stream, Mic, Camera */
+  margin-top: 0.2rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+
+
+
+/* Stream section */
+.stream {
+  display: flex;
+  flex-direction: column;       /* stack top row and private button vertically */
+  align-items: center;
+  gap: 0.25rem;                 /* vertical spacing */
+}
+
+/* Top row: logo + Stream Mode text side by side */
+.stream-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;                  /* space between logo and text */
+}
+
+/* Stream logo */
+.stream-logo img {
+  width: 32px;                   /* small for mobile */
+  height: auto;
+  display: block;                /* ensure no extra space below */
+}
+
+/* Stream Mode text */
+.stream-mode {
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: block;                /* make sure it's visible */
+  color: white;                  /* ensure text color shows */
+}
+
+/* Private button below logo + text */
+.private {
+  background-color: #242b33;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: -0.3rem;
+  width: max-content;
+}
+
+/* Hide public elements */
+.public, .public-box {
+  display: none;
+}
+
+/* Mic section */
 .mic {
-  position: absolute;
-  top: 56.6vh;        /* 333px / 575*100 ≈ 57.91vh */
-  left: 52.19vw;       /* 183px / 320*100 ≈ 57.19vw */
-  width: 40%;         /* keep relative to container width */
-  z-index: 20;
+  display: flex;               /* ensure flex */
+  flex-direction: column;      /* vertical stack */
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
 }
 
-.mic-muted-img {
-  top: -10vh;           /* from % to vh */
-  left: 100vw;
-  opacity: 0%;
-}
 
-.mic-muted-img img {
-  width: 15%;
-  height: auto;
-}
-
-.mic-muted-text {
-  position: absolute;
-  left: -4.06vw;        /* -13px / 320*100 ≈ -4.06vw */
-  opacity: 0%;
-}
-
-.mic-unmuted-img {
-  position: absolute;
-  top: -0.003vh;        /* -0.3px / 575*100 ≈ -0.05vh */
-  left: 0vw;
-}
-
-.mic-unmuted-text {
-  position: absolute;
-  left: -8.6vw;        /* -24px / 320*100 ≈ -7.5vw */
-  opacity: 100%;
-}
-
+/* Mic icon (unmuted only) */
 .mic-unmuted-img img {
-  width: 15%;
+  width: 20px;                /* mobile icon size */
   height: auto;
+  display: block;
+  margin: 0 auto;             /* center horizontally */
+}
+
+/* Mic text (unmuted) */
+.mic-unmuted-text {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;        /* small spacing below icon */
+  color: white;
+  /* font-size leave to you */
+}
+
+/* Hide muted icon/text for now */
+.mic-muted-img,
+.mic-muted-text {
+  display: none;
+}
+
+/* Hide Camera On elements */
+.camera-on-img,
+.camera-on-txt {
+  display: none;
+}
+
+/* Show Camera Off elements */
+.camera-off-img,
+.camera-off-txt {
+  display: block;
 }
 
 .camera {
-  position: absolute;
-  top: 54.2vh;        /* 322px / 575*100 ≈ 55.91vh */
-  left: 76.38vw;       /* 270px / 320*100 ≈ 84.38vw */
-  width: 90vw;
-  opacity: 100%;
-}
-
-.camera-on-img {
-  top: 1.74vh;          /* 10px / 575*100 ≈ 1.74vh */
-  left: 9.38vw;         /* 30px / 320*100 ≈ 9.38vw */
-}
-
-.camera-on-img img {
-  width: 18vw;
-}
-
-.camera-off-img {
-  top: 5.22vh;          /* 30px / 575*100 ≈ 5.22vh */
-  left: 9.38vw;
-  opacity: 0%;
+  display: flex;
+  flex-direction: column;    /* stack icon + text vertically */
+  align-items: center;
+  gap: 0.25rem;              /* space between icon and text */
+  margin-top: -0.3rem;
 }
 
 .camera-off-img img {
-  width: 18vw;
-}
-
-.camera-on-txt {
-  position: absolute;
-  left: -6.25vw;        /* -20px / 320*100 ≈ -6.25vw */
-  top: 8.78vh;          /* 50.5px / 575*100 ≈ 8.78vh */
+  width: 50px;               /* icon size */
+  height: auto;
+  display: block;
+  margin: 0 auto;            /* center horizontally */
 }
 
 .camera-off-txt {
-  position: absolute;
-  opacity: 0%;
-  left: -9.38vw;        /* -30px / 320*100 ≈ -9.38vw */
-}
-
-.live {
-  position: absolute;
-  top: 71.3vh;          /* 410px / 575*100 ≈ 71.3vh */
-  left: 4.69vw;         /* 15px / 320*100 ≈ 4.69vw */
-  z-index: 20;
-  opacity: 100%;
-}
-
-.live .live-box {
-  width: 103.13vw;      /* 330px / 320*100 ≈ 103.13vw */
-  height: 56vh;          /* 322px / 575*100 ≈ 56vh */
-  background-color: #111922;
-  border-radius: 0.87vh; /* 5px / 575*100 ≈ 0.87vh */
-  position: relative;
-}
-
-.live .live-title {
-  position: absolute;
-  top: 3.8%;
-  left: 3%;
-  font-family: 'NotoSansJP';
+  text-align: center;
   color: white;
-  font-size: 5vw;
+  font-size: 0.9rem;         /* adjust text size */
+  margin-top: -0.3rem;       /* space below icon */
 }
 
-.live .live-small-box {
-  width: 103.13vw;       /* 330px / 320*100 ≈ 103.13vw */
-  height: 8.7vh;         /* 50px / 575*100 ≈ 8.7vh */
+//* Live section container */
+/* Live section container */
+/* Live section container */
+.live {
+  display: flex;                /* flex to allow centering */
+  justify-content: center;      /* center horizontally */
+  margin-top: 1rem;             /* space below bottom row */
+  width: 100%;
+  padding: 0 1rem;              /* small space from screen edges */
+}
+
+/* Live box container */
+.live-box {
+  background-color: #111922;
+  width: 90%;
+  max-width: 765px;
+  border-radius: 6px;
+  padding: 0.5rem;
+  position: relative;           /* needed for absolutely positioned children */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 40vh;             /* adjust as needed */
+  margin: 1rem;               /* ensures centering if needed */
+}
+
+
+/* Live small boxes */
+.live-small-box {
+  width: 100%;                  /* full width of live-box */
   background-color: #242b33;
-  border-radius: 0.7vh;  /* 4px / 575*100 ≈ 0.7vh */
-  position: absolute;
+  border-radius: 4px;            /* optional rounding */
+  position: absolute;            /* position relative to live-box */
+  left: 0;                       /* align to left edge */
 }
 
-.arrow {
-  position: absolute;
-  top: 73.04vh;          /* 420px / 575*100 ≈ 73.04vh */
-  left: 93.75vw;         /* 300px / 320*100 ≈ 93.75vw */
-  z-index: 21;
+/* Top small box */
+.live-small-box.box1 {
+  top: 0;                        /* stick to top of live-box */
+  height: 40px;                  /* your desired height */
+  margin: 0;                     /* remove any gap */
 }
 
-.arrow img {
-  width: 50vw;            /* 50% of container width → scaled to viewport */
+/* Bottom small box */
+.live-small-box.box2 {
+  bottom: 0;                     /* stick to bottom of live-box */
+  height: 50px;                  /* you can adjust height */
+  margin: 0;                     /* remove any gap */
+}
+
+/* Live Chat title inside live-box */
+.live-title {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Arrow inside live box */
+.live .arrow {
+  position: absolute;       /* position relative to live box */
+  top: 0.5rem;              /* small spacing from top */
+  right: 0.5rem;            /* small spacing from right */
+  width: 30px;              /* set width */
+  height: 30px;             /* set height */
+  display: block;           /* make sure it's visible */
+  z-index: 10;              /* on top of other elements */
+}
+
+.live .arrow img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* keep aspect ratio */
+  display: block;
 }
